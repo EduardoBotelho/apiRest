@@ -1,4 +1,4 @@
-package ApiRest;
+package ApiRestwithRDS;
 
 import br.com.exemploRDS.apiRest.ApiRestApplication;
 import org.springframework.boot.SpringApplication;

@@ -1,14 +1,17 @@
-package ApiRest;
+package ApiRestwithRDS.Hateoas.Controllers;
 
+import ApiRestwithRDS.Entitys.Employee;
+import ApiRestwithRDS.Exceptions.EmployeeNotFoundExceptionHateoas;
+import ApiRestwithRDS.Repositories.EmployeeRepositoryHateoas;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 public class EmployeeController {
-    private final EmployeeRepository repository;
+    private final EmployeeRepositoryHateoas repository;
 
-    public EmployeeController(EmployeeRepository repository) {
+    public EmployeeController(EmployeeRepositoryHateoas repository) {
         this.repository = repository;
     }
 
@@ -18,7 +21,7 @@ public class EmployeeController {
     }
     @GetMapping("/employees/{id}")
     public Employee consultById(@PathVariable Long id){
-        return repository.findById(id).orElseThrow(()-> new EmployeeNotFoundException(id));
+        return repository.findById(id).orElseThrow(()-> new EmployeeNotFoundExceptionHateoas(id));
     }
 
     @PostMapping("/employees")
