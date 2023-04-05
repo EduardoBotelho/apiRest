@@ -1,4 +1,4 @@
-package ApiRestwithRDS.Exceptions;
+package Hateoas.Exceptions;
 
 public class OrderNotFoundExceptionHateoas extends RuntimeException{
     public OrderNotFoundExceptionHateoas(long id){

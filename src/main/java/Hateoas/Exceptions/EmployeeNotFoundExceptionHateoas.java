@@ -1,4 +1,4 @@
-package ApiRestwithRDS.Exceptions;
+package Hateoas.Exceptions;
 
 public class EmployeeNotFoundExceptionHateoas extends RuntimeException{
 

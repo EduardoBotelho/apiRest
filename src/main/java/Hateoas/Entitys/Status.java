@@ -1,4 +1,4 @@
-package ApiRestwithRDS.Entitys;
+package Hateoas.Entitys;
 
 
 public enum Status {

@@ -1,4 +1,5 @@
-package ApiRestwithRDS.Exceptions;
+package ApiRest;
+
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -9,10 +10,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ControllerAdvice
 public class EmployeeNotFoundAdvice {
     @ResponseBody
-    @ExceptionHandler(EmployeeNotFoundExceptionHateoas.class)
+    @ExceptionHandler(EmployeeNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    String employeeNotFoundHandler(EmployeeNotFoundExceptionHateoas ex){
-        final String message =  ex.getMessage();
+    String employeeNotFoundHandler(EmployeeNotFoundException ex){
+        final String message = ex.getMessage();
         return message;
     }
 }
